@@ -156,7 +156,7 @@ public:
 		}
 
 		int hashKey;
-
+		std::string output = std::to_string(toInsert.key);
 		int collisionCount = 0;
 		bool stopHash = false;
 		bool success = false;
@@ -182,6 +182,9 @@ public:
 
 				collisionCount++;
 			}
+
+			output += "->" + std::to_string(hashKey);
+
 		}
 
 
@@ -191,9 +194,20 @@ public:
 			map[hashKey].label = FULL;
 
 			currentSize++;
+
+			std::cout << "Inserting: " << '(' << toInsert.key << ", " << toInsert.value << ')'
+				<< '\n' << "Hashed Key: " << output << '\n' << '\n';
 		}
 	}
 
+	/**
+	 * @fn	void DoubleHashMap::remove(const T_key key)
+	 * @brief	Removes the given key
+	 *
+	 * @exception	errorType::FULL,	Thrown when a full, error condition occurs.
+	 *
+	 * @param 	key	The key to remove.
+	 */
 	void remove(const T_key key)
 	{
 		if (empty())
@@ -201,8 +215,8 @@ public:
 			throw(errorType::FULL, errorType::errorString[FULL], 5);
 		}
 
-		int hashKey = -1;
-
+		int hashKey;
+		std::string output = std::to_string(key);
 		int collisionCount = 0;
 		bool stopHash = false;
 		bool success = false;
@@ -221,12 +235,14 @@ public:
 				else
 				{
 					collisionCount++;
+
 				}
 			}
 			else
 			{
 				stopHash = true;
 			}
+			output += "->" + std::to_string(hashKey);
 		}
 
 		if (success)
@@ -236,6 +252,11 @@ public:
 			map[hashKey].label = AVAILABLE;
 
 			currentSize--;
+
+			std::cout << "Removing key: " << key << '\n'
+				<< "Hashed Key: " << output << '\n' << '\n';
+
+
 		}
 
 
@@ -264,7 +285,7 @@ public:
 		}
 
 		output << "  Index  | LABEL |  Key  |  Value" << '\n'
-			   << "_________|_______|_______|___________________________________"
+			   << "_________|_______|_______|___________________"
 			<< '\n';
 
 		for (int i = 0; i < capacity; i++)
@@ -379,7 +400,7 @@ public:
 		}
 
 		int hashKey;
-
+		std::string output = std::to_string(toInsert.key);
 		int collisionCount = 0;
 		bool stopHash = false;
 		bool success = false;
@@ -405,6 +426,9 @@ public:
 
 				collisionCount++;
 			}
+
+			output += "->" + std::to_string(hashKey);
+
 		}
 
 
@@ -414,6 +438,9 @@ public:
 			map[hashKey].label = FULL;
 
 			currentSize++;
+
+			std::cout << "Inserting: " << '(' << toInsert.key << ", " << toInsert.value <<  ')'
+				<< '\n' << "Hashed Key: "<< output << '\n' << '\n';
 		}
 	}
 
@@ -425,7 +452,7 @@ public:
 		}
 
 		int hashKey;
-		
+		std::string output = std::to_string(key);
 		int collisionCount = 0;
 		bool stopHash = false;
 		bool success = false;
@@ -444,12 +471,14 @@ public:
 				else
 				{
 					collisionCount++;
+					
 				}
 			}
 			else
 			{
 				stopHash = true;
 			}
+			output += "->" + std::to_string(hashKey);
 		}
 
 		if (success)
@@ -459,6 +488,11 @@ public:
 			map[hashKey].label = AVAILABLE;
 
 			currentSize--;
+
+			std::cout << "Removing key: " << key << '\n'
+				<< "Hashed Key: " << output << '\n' << '\n';
+
+
 		}
 
 
@@ -487,7 +521,7 @@ public:
 		}
 
 		output << "  Index  | LABEL |  Key  |  Value" << '\n'
-			<< "_________|_______|_______|___________________________________"
+			<< "_________|_______|_______|___________________"
 			<< '\n';
 
 		for (int i = 0; i < capacity; i++)

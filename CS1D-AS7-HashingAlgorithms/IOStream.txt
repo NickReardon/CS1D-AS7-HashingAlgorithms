@@ -2,275 +2,858 @@
 * PROGRAMMED BY : Nick Reardon
 * CLASS         : CS1D
 * SECTION       : MW - 2:30p
-* Assignment #6 : Priority Queues
+* Assignment #7 : Hashing Algorithms
 ****************************************************************************
 
-                Assignment #6 - Priority Queues
+              Assignment #7 - Hashing Algorithms
 
- Implement two priority queues to simulate an afternoon in an
- emergency room. Your software should NOT be dependent on
- the given data.
+Part 1:
 
-    1. Priority Queue 1
- Develop software or use the authorÆs priority queue ADT to
- implement a priority queue based on a heap.
+    Create a map using the double hashing algorithm where:
+        h(k) = k mod 29
+        hÆ(k) = 13 - k mod 13
+        N = 29 (size of the array)
+
+    Output your final map including the keys and values.
+
+    Use the following input:
+        18 San Clemente
+        41 Mission Viejo
+        22 Laguna Niguel
+        44 Irvine
+
+        Delete key 18
+
+        58 Lake Forest
+        32 San Diego
+        49 Anaheim
+
+        Delete key 58
+
+        31 Los Angeles
+        17 Orange
+        72 Palms Springs
+        41 Riverside
+
+        Delete key 49
+
+        19 Brea
+        60 Santa Ana
+        35 Tustin
+        103 Oceanside
+        11 La Jolla
+        18 Del Mar
+        22 Aliso Viejo
+        49 Laguna Beach
+
+        Delete key 41
+
+        42 Vista
+        49 San Diego
+        99 San Juan
+        29 Dana Point
+        88 El Segundo
+        41 San Clemente
+        62 Laguna Hills
 
 
-    2. Priority Queue 2
- Use the STL priority_queue
+Part 2:
 
- Test both priority queues with the following data assuming
- that the priority queue is built at noon and Doctor DoGood is
- the only doctor on duty. Each patient requires 25 minutes of
- care. The patient who waited the longest has the highest
- priority unless there is a life-threatening scenario. Determine
- the order in which the patients will be treated. You will need
- to create a timer. Output the time each appointment starts
- and ends.
- Assumptions:
-    1. When a patient's care is interrupted, they still only get
-       25 minutes of care total
-    2. If a patientÆs treatment starts at 1:00 and is not
-       interrupted, then the next patientÆs treatment will
-       start at 1:25
-    3. Waiting time is wait time before noon
+    Create a map using the quadratic hashing algorithm where:
+        h(k) = k mod 29
 
- |-----------------------|-----------------------------|--------|
- | Name                  |    Waiting Time (hours)     |  End   |
- |_______________________|_____________________________|________|
- | Bob Bleeding          |              5              |        |
- |-----------------------|-----------------------------|--------|
- | Frank Feelingbad      |              3              |        |
- |-----------------------|-----------------------------|--------|
- | Cathy Coughing        |              2              |        |
- |-----------------------|-----------------------------|--------|
- | Sam Sneezing          | Life threatening at 1:14 PM |        |
- |-----------------------|-----------------------------|--------|
- | Paula Pain            |              4              |        |
- |-----------------------|-----------------------------|--------|
- | Sid Sickly            | Life threatening at 3:01 PM |        |
- |-----------------------|-----------------------------|--------|
- | Alice Ailment         |              7              |        |
- |-----------------------|-----------------------------|--------|
- | Irene Ill             |              1              |        |
- |-----------------------|-----------------------------|--------|
- | Tom Temperature       |              6              |        |
- |-----------------------|-----------------------------|--------|
+    Output your final map including the keys and values.
 
-
- Due February 26th
+    Due March 4
 
 
 
 ****************************************************************************
 
 
- Now doing written Priority Queue based on a heap
+   --- Double Hash Map ---
+
+Inserting: (18, San Clamente)
+Hashed Key: 18->18
+
+Inserting: (41, Mission Viejo)
+Hashed Key: 41->12
+
+Inserting: (22, Laguna Niguel)
+Hashed Key: 22->22
+
+Inserting: (44, Irvine)
+Hashed Key: 44->15
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | EMPTY |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | EMPTY |   -1 |
+ [    3] | EMPTY |   -1 |
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Mission Viejo
+ [   13] | EMPTY |   -1 |
+ [   14] | EMPTY |   -1 |
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | EMPTY |   -1 |
+ [   18] | FULL  |   18 | San Clamente
+ [   19] | EMPTY |   -1 |
+ [   20] | EMPTY |   -1 |
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
 
 
-  -- 12::00 --
- Creating priority queue of waiting patients...
+Removing key: 18
+Hashed Key: 18->18
 
-Patient Admitted:
-Name: Alice Ailment
-Care began at 12:00
-
-Patient Discharge:
-Name: Alice Ailment
-Care ended at 12:25
-
-Patient Admitted:
-Name: Tom Temperature
-Care began at 12:25
-
-Patient Discharge:
-Name: Tom Temperature
-Care ended at 12:50
-
-Patient Admitted:
-Name: Bob Bleeding
-Care began at 12:50
-
-Patient Care Interrupted:
-Name: Sam Sneezing
-Care interrupted at 01:14
-Minutes in visit remaining: 1
-
-High Priority Patient Recieved
-Immediate attention administered:
-Name: Sam Sneezing
-Care began at 01:14
-
-Patient Discharge:
-Name: Sam Sneezing
-Care ended at 01:39
-
-Patient Care Resumed:
-Name: Bob Bleeding
-Care resumed at 01:39
-Minutes in visit remaining: 1
-
-Patient Discharge:
-Name: Bob Bleeding
-Care ended at 01:40
-
-Patient Admitted:
-Name: Paula Pain
-Care began at 01:40
-
-Patient Discharge:
-Name: Paula Pain
-Care ended at 02:05
-
-Patient Admitted:
-Name: Frank Feelingbad
-Care began at 02:05
-
-Patient Discharge:
-Name: Frank Feelingbad
-Care ended at 02:30
-
-Patient Admitted:
-Name: Cathy Coughing
-Care began at 02:30
-
-Patient Discharge:
-Name: Cathy Coughing
-Care ended at 02:55
-
-Patient Admitted:
-Name: Irene Ill
-Care began at 02:55
-
-Patient Care Interrupted:
-Name: Sid Sickly
-Care interrupted at 03:01
-Minutes in visit remaining: 19
-
-High Priority Patient Recieved
-Immediate attention administered:
-Name: Sid Sickly
-Care began at 03:01
-
-Patient Discharge:
-Name: Sid Sickly
-Care ended at 03:26
-
-Patient Care Resumed:
-Name: Irene Ill
-Care resumed at 03:26
-Minutes in visit remaining: 19
-
-Patient Discharge:
-Name: Irene Ill
-Care ended at 03:45
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | EMPTY |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | EMPTY |   -1 |
+ [    3] | EMPTY |   -1 |
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Mission Viejo
+ [   13] | EMPTY |   -1 |
+ [   14] | EMPTY |   -1 |
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | EMPTY |   -1 |
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | EMPTY |   -1 |
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
 
 
-  --- END OF DAY  05:00 ----
+Inserting: (58, Lake Forest)
+Hashed Key: 58->0
 
-____________________________________________________________
+Inserting: (32, San Diego)
+Hashed Key: 32->3
 
- Now doing STL Priority Queue
+Inserting: (49, Anaheim)
+Hashed Key: 49->20
 
-
-  -- 12::00 --
- Creating priority queue of waiting patients...
-
-Patient Admitted:
-Name: Alice Ailment
-Care began at 12:00
-
-Patient Discharge:
-Name: Alice Ailment
-Care ended at 12:25
-
-Patient Admitted:
-Name: Tom Temperature
-Care began at 12:25
-
-Patient Discharge:
-Name: Tom Temperature
-Care ended at 12:50
-
-Patient Admitted:
-Name: Bob Bleeding
-Care began at 12:50
-
-Patient Care Interrupted:
-Name: Sam Sneezing
-Care interrupted at 01:14
-Minutes in visit remaining: 1
-
-High Priority Patient Recieved
-Immediate attention administered:
-Name: Sam Sneezing
-Care began at 01:14
-
-Patient Discharge:
-Name: Sam Sneezing
-Care ended at 01:39
-
-Patient Care Resumed:
-Name: Bob Bleeding
-Care resumed at 01:39
-Minutes in visit remaining: 1
-
-Patient Discharge:
-Name: Bob Bleeding
-Care ended at 01:40
-
-Patient Admitted:
-Name: Paula Pain
-Care began at 01:40
-
-Patient Discharge:
-Name: Paula Pain
-Care ended at 02:05
-
-Patient Admitted:
-Name: Frank Feelingbad
-Care began at 02:05
-
-Patient Discharge:
-Name: Frank Feelingbad
-Care ended at 02:30
-
-Patient Admitted:
-Name: Cathy Coughing
-Care began at 02:30
-
-Patient Discharge:
-Name: Cathy Coughing
-Care ended at 02:55
-
-Patient Admitted:
-Name: Irene Ill
-Care began at 02:55
-
-Patient Care Interrupted:
-Name: Sid Sickly
-Care interrupted at 03:01
-Minutes in visit remaining: 19
-
-High Priority Patient Recieved
-Immediate attention administered:
-Name: Sid Sickly
-Care began at 03:01
-
-Patient Discharge:
-Name: Sid Sickly
-Care ended at 03:26
-
-Patient Care Resumed:
-Name: Irene Ill
-Care resumed at 03:26
-Minutes in visit remaining: 19
-
-Patient Discharge:
-Name: Irene Ill
-Care ended at 03:45
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | FULL  |   58 | Lake Forest
+ [    1] | EMPTY |   -1 |
+ [    2] | EMPTY |   -1 |
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Mission Viejo
+ [   13] | EMPTY |   -1 |
+ [   14] | EMPTY |   -1 |
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | EMPTY |   -1 |
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | FULL  |   49 | Anaheim
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
 
 
-  --- END OF DAY  05:00 ----
+Removing key: 58
+Hashed Key: 58->0
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | EMPTY |   -1 |
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Mission Viejo
+ [   13] | EMPTY |   -1 |
+ [   14] | EMPTY |   -1 |
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | EMPTY |   -1 |
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | FULL  |   49 | Anaheim
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Inserting: (31, Los Angeles)
+Hashed Key: 31->2
+
+Inserting: (17, Orange)
+Hashed Key: 17->17
+
+Inserting: (72, Palms Springs)
+Hashed Key: 72->14
+
+Inserting: (41, Riverside)
+Hashed Key: 41->12
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Riverside
+ [   13] | EMPTY |   -1 |
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | FULL  |   17 | Orange
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | FULL  |   49 | Anaheim
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Removing key: 49
+Hashed Key: 49->20
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Riverside
+ [   13] | EMPTY |   -1 |
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | FULL  |   17 | Orange
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | AVAIL |   -1 |
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Inserting: (19, Brea)
+Hashed Key: 19->19
+
+Inserting: (60, Santa Ana)
+Hashed Key: 60->2->7
+
+Inserting: (35, Tustin)
+Hashed Key: 35->6
+
+Inserting: (103, Oceanside)
+Hashed Key: 103->16
+
+Inserting: (11, La Jolla)
+Hashed Key: 11->11
+
+Inserting: (18, Del Mar)
+Hashed Key: 18->18
+
+Inserting: (22, Aliso Viejo)
+Hashed Key: 22->22
+
+Inserting: (49, Laguna Beach)
+Hashed Key: 49->20
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | FULL  |   35 | Tustin
+ [    7] | FULL  |   60 | Santa Ana
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | FULL  |   11 | La Jolla
+ [   12] | FULL  |   41 | Riverside
+ [   13] | EMPTY |   -1 |
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | FULL  |  103 | Oceanside
+ [   17] | FULL  |   17 | Orange
+ [   18] | FULL  |   18 | Del Mar
+ [   19] | FULL  |   19 | Brea
+ [   20] | FULL  |   49 | Laguna Beach
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Aliso Viejo
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Removing key: 41
+Hashed Key: 41->12
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | FULL  |   35 | Tustin
+ [    7] | FULL  |   60 | Santa Ana
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | FULL  |   11 | La Jolla
+ [   12] | AVAIL |   -1 |
+ [   13] | EMPTY |   -1 |
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | FULL  |  103 | Oceanside
+ [   17] | FULL  |   17 | Orange
+ [   18] | FULL  |   18 | Del Mar
+ [   19] | FULL  |   19 | Brea
+ [   20] | FULL  |   49 | Laguna Beach
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Aliso Viejo
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Inserting: (42, Vista)
+Hashed Key: 42->13
+
+Inserting: (49, San Diego)
+Hashed Key: 49->20
+
+Inserting: (99, San Juan)
+Hashed Key: 99->12
+
+Inserting: (29, Dana Point)
+Hashed Key: 29->0
+
+Inserting: (88, El Segundo)
+Hashed Key: 88->1
+
+Inserting: (41, San Clemente)
+Hashed Key: 41->12->23
+
+Inserting: (62, Laguna Hills)
+Hashed Key: 62->4
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | FULL  |   29 | Dana Point
+ [    1] | FULL  |   88 | El Segundo
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | FULL  |   62 | Laguna Hills
+ [    5] | EMPTY |   -1 |
+ [    6] | FULL  |   35 | Tustin
+ [    7] | FULL  |   60 | Santa Ana
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | FULL  |   11 | La Jolla
+ [   12] | FULL  |   99 | San Juan
+ [   13] | FULL  |   42 | Vista
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | FULL  |  103 | Oceanside
+ [   17] | FULL  |   17 | Orange
+ [   18] | FULL  |   18 | Del Mar
+ [   19] | FULL  |   19 | Brea
+ [   20] | FULL  |   49 | San Diego
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Aliso Viejo
+ [   23] | FULL  |   41 | San Clemente
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+
+
+______________________________________________________________________
+______________________________________________________________________
+______________________________________________________________________
+
+
+   --- Quadratic Hash Map ---
+
+Inserting: (18, San Clamente)
+Hashed Key: 18->18
+
+Inserting: (41, Mission Viejo)
+Hashed Key: 41->12
+
+Inserting: (22, Laguna Niguel)
+Hashed Key: 22->22
+
+Inserting: (44, Irvine)
+Hashed Key: 44->15
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | EMPTY |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | EMPTY |   -1 |
+ [    3] | EMPTY |   -1 |
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Mission Viejo
+ [   13] | EMPTY |   -1 |
+ [   14] | EMPTY |   -1 |
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | EMPTY |   -1 |
+ [   18] | FULL  |   18 | San Clamente
+ [   19] | EMPTY |   -1 |
+ [   20] | EMPTY |   -1 |
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Removing key: 18
+Hashed Key: 18->18
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | EMPTY |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | EMPTY |   -1 |
+ [    3] | EMPTY |   -1 |
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Mission Viejo
+ [   13] | EMPTY |   -1 |
+ [   14] | EMPTY |   -1 |
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | EMPTY |   -1 |
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | EMPTY |   -1 |
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Inserting: (58, Lake Forest)
+Hashed Key: 58->0
+
+Inserting: (32, San Diego)
+Hashed Key: 32->3
+
+Inserting: (49, Anaheim)
+Hashed Key: 49->20
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | FULL  |   58 | Lake Forest
+ [    1] | EMPTY |   -1 |
+ [    2] | EMPTY |   -1 |
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Mission Viejo
+ [   13] | EMPTY |   -1 |
+ [   14] | EMPTY |   -1 |
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | EMPTY |   -1 |
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | FULL  |   49 | Anaheim
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Removing key: 58
+Hashed Key: 58->0
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | EMPTY |   -1 |
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Mission Viejo
+ [   13] | EMPTY |   -1 |
+ [   14] | EMPTY |   -1 |
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | EMPTY |   -1 |
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | FULL  |   49 | Anaheim
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Inserting: (31, Los Angeles)
+Hashed Key: 31->2
+
+Inserting: (17, Orange)
+Hashed Key: 17->17
+
+Inserting: (72, Palms Springs)
+Hashed Key: 72->14
+
+Inserting: (41, Riverside)
+Hashed Key: 41->12
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Riverside
+ [   13] | EMPTY |   -1 |
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | FULL  |   17 | Orange
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | FULL  |   49 | Anaheim
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Removing key: 49
+Hashed Key: 49->20
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | EMPTY |   -1 |
+ [    7] | EMPTY |   -1 |
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | EMPTY |   -1 |
+ [   12] | FULL  |   41 | Riverside
+ [   13] | EMPTY |   -1 |
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | EMPTY |   -1 |
+ [   17] | FULL  |   17 | Orange
+ [   18] | AVAIL |   -1 |
+ [   19] | EMPTY |   -1 |
+ [   20] | AVAIL |   -1 |
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Laguna Niguel
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Inserting: (19, Brea)
+Hashed Key: 19->19
+
+Inserting: (60, Santa Ana)
+Hashed Key: 60->2->3->6
+
+Inserting: (35, Tustin)
+Hashed Key: 35->6->7
+
+Inserting: (103, Oceanside)
+Hashed Key: 103->16
+
+Inserting: (11, La Jolla)
+Hashed Key: 11->11
+
+Inserting: (18, Del Mar)
+Hashed Key: 18->18
+
+Inserting: (22, Aliso Viejo)
+Hashed Key: 22->22
+
+Inserting: (49, Laguna Beach)
+Hashed Key: 49->20
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | FULL  |   60 | Santa Ana
+ [    7] | FULL  |   35 | Tustin
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | FULL  |   11 | La Jolla
+ [   12] | FULL  |   41 | Riverside
+ [   13] | EMPTY |   -1 |
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | FULL  |  103 | Oceanside
+ [   17] | FULL  |   17 | Orange
+ [   18] | FULL  |   18 | Del Mar
+ [   19] | FULL  |   19 | Brea
+ [   20] | FULL  |   49 | Laguna Beach
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Aliso Viejo
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Removing key: 41
+Hashed Key: 41->12
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | AVAIL |   -1 |
+ [    1] | EMPTY |   -1 |
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | EMPTY |   -1 |
+ [    5] | EMPTY |   -1 |
+ [    6] | FULL  |   60 | Santa Ana
+ [    7] | FULL  |   35 | Tustin
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | FULL  |   11 | La Jolla
+ [   12] | AVAIL |   -1 |
+ [   13] | EMPTY |   -1 |
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | FULL  |  103 | Oceanside
+ [   17] | FULL  |   17 | Orange
+ [   18] | FULL  |   18 | Del Mar
+ [   19] | FULL  |   19 | Brea
+ [   20] | FULL  |   49 | Laguna Beach
+ [   21] | EMPTY |   -1 |
+ [   22] | FULL  |   22 | Aliso Viejo
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
+
+Inserting: (42, Vista)
+Hashed Key: 42->13
+
+Inserting: (49, San Diego)
+Hashed Key: 49->20
+
+Inserting: (99, San Juan)
+Hashed Key: 99->12
+
+Inserting: (29, Dana Point)
+Hashed Key: 29->0
+
+Inserting: (88, El Segundo)
+Hashed Key: 88->1
+
+Inserting: (41, San Clemente)
+Hashed Key: 41->12->13->16->21
+
+Inserting: (62, Laguna Hills)
+Hashed Key: 62->4
+
+  Index  | LABEL |  Key  |  Value
+_________|_______|_______|___________________
+ [    0] | FULL  |   29 | Dana Point
+ [    1] | FULL  |   88 | El Segundo
+ [    2] | FULL  |   31 | Los Angeles
+ [    3] | FULL  |   32 | San Diego
+ [    4] | FULL  |   62 | Laguna Hills
+ [    5] | EMPTY |   -1 |
+ [    6] | FULL  |   60 | Santa Ana
+ [    7] | FULL  |   35 | Tustin
+ [    8] | EMPTY |   -1 |
+ [    9] | EMPTY |   -1 |
+ [   10] | EMPTY |   -1 |
+ [   11] | FULL  |   11 | La Jolla
+ [   12] | FULL  |   99 | San Juan
+ [   13] | FULL  |   42 | Vista
+ [   14] | FULL  |   72 | Palms Springs
+ [   15] | FULL  |   44 | Irvine
+ [   16] | FULL  |  103 | Oceanside
+ [   17] | FULL  |   17 | Orange
+ [   18] | FULL  |   18 | Del Mar
+ [   19] | FULL  |   19 | Brea
+ [   20] | FULL  |   49 | San Diego
+ [   21] | FULL  |   41 | San Clemente
+ [   22] | FULL  |   22 | Aliso Viejo
+ [   23] | EMPTY |   -1 |
+ [   24] | EMPTY |   -1 |
+ [   25] | EMPTY |   -1 |
+ [   26] | EMPTY |   -1 |
+ [   27] | EMPTY |   -1 |
+ [   28] | EMPTY |   -1 |
+
 
 Press any key to continue . . .
