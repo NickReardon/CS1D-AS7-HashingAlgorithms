@@ -127,7 +127,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input.txt" />
     <Text Include="IOStream.txt" />
     <Text Include="Prompt.txt" />
   </ItemGroup>

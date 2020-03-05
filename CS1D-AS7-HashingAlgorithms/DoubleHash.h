@@ -57,7 +57,7 @@ struct T_struct
 
 		label = EMPTY;
 	}
-
+	
 	T_struct<T_key, T_value>(const T_struct<T_key, T_value>& rhs)
 	{
 		this->key = rhs.key;
@@ -65,7 +65,7 @@ struct T_struct
 
 		this->label = rhs.label;
 	}
-
+	
 	T_struct<T_key, T_value>& operator=(const T_struct<T_key, T_value>& rhs)
 	{
 		this->key = rhs.key;
@@ -158,32 +158,40 @@ public:
 		int hashKey;
 
 		int collisionCount = 0;
+		bool stopHash = false;
 		bool success = false;
-		while (success == false)
+
+		while (stopHash == false)
 		{
 			hashKey = DoubleHash(toInsert.key, collisionCount);
 
 			if (map[hashKey].label == EMPTY ||
 				map[hashKey].label == AVAILABLE)
 			{
+				stopHash = true;
 				success = true;
+
 			}
 			else
 			{
+				if (map[hashKey].key == toInsert.key)
+				{
+					stopHash = true;
+					success = true;
+				}
+
 				collisionCount++;
 			}
-			
 		}
 
-		
 
-		map[hashKey] = toInsert;
-		map[hashKey].label = FULL;
+		if (success)
+		{
+			map[hashKey] = toInsert;
+			map[hashKey].label = FULL;
 
-		currentSize++;
-
-		printAll(std::cout);
-
+			currentSize++;
+		}
 	}
 
 	void remove(const T_key key)
@@ -193,18 +201,21 @@ public:
 			throw(errorType::FULL, errorType::errorString[FULL], 5);
 		}
 
-		int hashKey;
+		int hashKey = -1;
 
 		int collisionCount = 0;
+		bool stopHash = false;
 		bool success = false;
-		while (success == false)
+		while (stopHash == false)
 		{
 			hashKey = DoubleHash(key, collisionCount);
 
-			if (map[hashKey].label == FULL && map[hashKey].label == AVAILABLE)
+			if (map[hashKey].label == FULL ||
+				map[hashKey].label == AVAILABLE)
 			{
 				if (map[hashKey].key == key)
 				{
+					stopHash = true;
 					success = true;
 				}
 				else
@@ -212,25 +223,27 @@ public:
 					collisionCount++;
 				}
 			}
-
-			if (map[hashKey].label == FULL)
+			else
 			{
-				
+				stopHash = true;
 			}
 		}
 
-		map[hashKey] = T_struct<T_key, T_value>();
-		map[hashKey].label = AVAILABLE;
+		if (success)
+		{
+			map[hashKey].key = -1;
+			map[hashKey].value = "";
+			map[hashKey].label = AVAILABLE;
 
-		currentSize--;
+			currentSize--;
+		}
 
-		printAll(std::cout);
 
 	}
 
 	bool full()
 	{
-		return currentSize >= capacity;
+		return currentSize == capacity;
 	}
 
 	bool empty()
@@ -250,16 +263,255 @@ public:
 			throw(errorType::EMPTY, errorType::errorString[EMPTY], 5);
 		}
 
-		output << "  Index  |  Key  |  Value" << '\n'
-			<< "_________|_______|___________________________________"
+		output << "  Index  | LABEL |  Key  |  Value" << '\n'
+			   << "_________|_______|_______|___________________________________"
 			<< '\n';
 
 		for (int i = 0; i < capacity; i++)
 		{
 			output << std::right
-				<< " [" << std::setw(5) << i << "] | "
-				<< ' ' << std::setw(4) << map[i].key << " |"
-				<< std::left
+				<< " [" << std::setw(5) << i << "] | ";
+			switch (map[i].label)
+			{
+			case EMPTY:
+				output << "EMPTY |";
+				break;
+
+			case FULL:
+				output << "FULL  |";
+				break;
+
+			case AVAILABLE:
+				output << "AVAIL |";
+				break;
+
+			}
+			output << ' ' << std::setw(4) << map[i].key << " |";
+
+			output	<< std::left
+				<< ' ' << map[i].value
+				<< '\n';
+		}
+		output << "\n\n";
+	}
+};
+
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+template <class T_key, class T_value>
+class QuadraticHashMap
+{
+private:
+
+	T_struct<T_key, T_value>* map;
+
+	int currentSize;
+	int capacity;
+
+	// ostream member? Assign it in constructor or method???
+	// set to NULL?
+
+protected:
+
+	int QuadraticHash(const int givenKey, const int collisionCount) const
+	{
+		int hashKey;
+
+		int j = collisionCount;
+		int k = givenKey;
+		int N = capacity;
+
+		/*
+		int hk;
+		int hk2;
+
+		hk = (k % N);
+		hk2 = (k % 13);
+		hk2 = 13 - hk2;
+		hk2 = j * hk2;
+
+		hashKey = hk + hk2;
+
+		hashKey = hashKey % N;
+		*/
+
+		
+
+		if (j > 0)
+		{
+			hashKey = (((k % N) + (j * j)) % N);
+		}
+		else
+		{
+			hashKey = (k % N);
+		}
+
+		return hashKey;
+	}
+
+	int QuadraticHash(const T_struct<T_key, T_value>& toInsert, const int collisionCount) const
+	{
+		QuadraticHash(toInsert.key, collisionCount);
+	}
+
+public:
+
+	QuadraticHashMap(const int newCapacity)
+	{
+		map = new  T_struct<T_key, T_value>[newCapacity];
+
+		currentSize = 0;
+
+		capacity = newCapacity;
+	}
+
+	~QuadraticHashMap()
+	{
+		delete[] map;
+	}
+
+	void insert(const T_struct<T_key, T_value>& toInsert)
+	{
+		if (full())
+		{
+			throw(errorType::FULL, errorType::errorString[FULL], 5);
+		}
+
+		int hashKey;
+
+		int collisionCount = 0;
+		bool stopHash = false;
+		bool success = false;
+
+		while (stopHash == false)
+		{
+			hashKey = QuadraticHash(toInsert.key, collisionCount);
+
+			if (map[hashKey].label == EMPTY ||
+				map[hashKey].label == AVAILABLE)
+			{
+				stopHash = true;
+				success = true;
+
+			}
+			else
+			{
+				if (map[hashKey].key == toInsert.key)
+				{
+					stopHash = true;
+					success = true;
+				}
+
+				collisionCount++;
+			}
+		}
+
+
+		if (success)
+		{
+			map[hashKey] = toInsert;
+			map[hashKey].label = FULL;
+
+			currentSize++;
+		}
+	}
+
+	void remove(const T_key key)
+	{
+		if (empty())
+		{
+			throw(errorType::FULL, errorType::errorString[FULL], 5);
+		}
+
+		int hashKey;
+		
+		int collisionCount = 0;
+		bool stopHash = false;
+		bool success = false;
+		while (stopHash == false)
+		{
+			hashKey = QuadraticHash(key, collisionCount);
+
+			if (map[hashKey].label == FULL ||
+				map[hashKey].label == AVAILABLE)
+			{
+				if (map[hashKey].key == key)
+				{
+					stopHash = true;
+					success = true;
+				}
+				else
+				{
+					collisionCount++;
+				}
+			}
+			else
+			{
+				stopHash = true;
+			}
+		}
+
+		if (success)
+		{
+			map[hashKey].key = -1;
+			map[hashKey].value = "";
+			map[hashKey].label = AVAILABLE;
+
+			currentSize--;
+		}
+
+
+	}
+
+	bool full()
+	{
+		return currentSize == capacity;
+	}
+
+	bool empty()
+	{
+		return currentSize == 0;
+	}
+
+	int size()
+	{
+		return currentSize;
+	}
+
+	void printAll(std::ostream& output)
+	{
+		if (empty())
+		{
+			throw(errorType::EMPTY, errorType::errorString[EMPTY], 5);
+		}
+
+		output << "  Index  | LABEL |  Key  |  Value" << '\n'
+			<< "_________|_______|_______|___________________________________"
+			<< '\n';
+
+		for (int i = 0; i < capacity; i++)
+		{
+			output << std::right
+				<< " [" << std::setw(5) << i << "] | ";
+			switch (map[i].label)
+			{
+			case EMPTY:
+				output << "EMPTY |";
+				break;
+
+			case FULL:
+				output << "FULL  |";
+				break;
+
+			case AVAILABLE:
+				output << "AVAIL |";
+				break;
+
+			}
+			output << ' ' << std::setw(4) << map[i].key << " |";
+
+			output << std::left
 				<< ' ' << map[i].value
 				<< '\n';
 		}
@@ -268,4 +520,13 @@ public:
 };
 
 
+
+
+
+
+
 #endif //!_DOUBLEHASH_H_
+
+
+
+

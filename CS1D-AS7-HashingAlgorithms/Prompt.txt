@@ -12,16 +12,22 @@ Part 1:
         41 Mission Viejo
         22 Laguna Niguel
         44 Irvine
+
         Delete key 18
+
         58 Lake Forest
         32 San Diego
         49 Anaheim
+
         Delete key 58
+
         31 Los Angeles
         17 Orange
         72 Palms Springs
         41 Riverside
+
         Delete key 49
+
         19 Brea
         60 Santa Ana
         35 Tustin
@@ -30,6 +36,7 @@ Part 1:
         18 Del Mar
         22 Aliso Viejo
         49 Laguna Beach
+
         Delete key 41
 
         42 Vista
