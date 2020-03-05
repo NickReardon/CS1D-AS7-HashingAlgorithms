@@ -29,35 +29,32 @@ int main()
 	doubleHash.insert(make_struct(22, std::string("Laguna Niguel")));
 	doubleHash.insert(make_struct(44, std::string("Irvine")));
 
-	doubleHash.printAll(cout);
+	//doubleHash.printAll(cout);
 
 	//DELETE KEY 18
 	doubleHash.remove(18);
 
-	doubleHash.printAll(cout);
 
 	doubleHash.insert(make_struct(58, std::string("Lake Forest")));
 	doubleHash.insert(make_struct(32, std::string("San Diego")));
 	doubleHash.insert(make_struct(49, std::string("Anaheim")));
 
-	doubleHash.printAll(cout);
+	//doubleHash.printAll(cout);
 
 	//DELETE KEY 58
 	doubleHash.remove(58);
 
-	doubleHash.printAll(cout);
 
 	doubleHash.insert(make_struct(31, std::string("Los Angeles")));
 	doubleHash.insert(make_struct(17, std::string("Orange")));
 	doubleHash.insert(make_struct(72, std::string("Palms Springs")));
 	doubleHash.insert(make_struct(41, std::string("Riverside")));
 
-	doubleHash.printAll(cout);
+	//doubleHash.printAll(cout);
 
 	//DELETE KEY 49
 	doubleHash.remove(49);
 
-	doubleHash.printAll(cout);
 
 	doubleHash.insert(make_struct(19, std::string("Brea")));
 	doubleHash.insert(make_struct(60, std::string("Santa Ana")));
@@ -68,12 +65,11 @@ int main()
 	doubleHash.insert(make_struct(22, std::string("Aliso Viejo")));
 	doubleHash.insert(make_struct(49, std::string("Laguna Beach")));
 
-	doubleHash.printAll(cout);
+	//doubleHash.printAll(cout);
 
 	//DELETE KEY 41
 	doubleHash.remove(41);
 
-	doubleHash.printAll(cout);
 
 	doubleHash.insert(make_struct(42, std::string("Vista")));
 	doubleHash.insert(make_struct(49, std::string("San Diego")));
@@ -103,35 +99,35 @@ int main()
 	quadHash.insert(make_struct(22, std::string("Laguna Niguel")));
 	quadHash.insert(make_struct(44, std::string("Irvine")));
 
-	quadHash.printAll(cout);
+	//quadHash.printAll(cout);
 
 	//DELETE KEY 18
 	quadHash.remove(18);
 
-	quadHash.printAll(cout);
+	//quadHash.printAll(cout);
 
 	quadHash.insert(make_struct(58, std::string("Lake Forest")));
 	quadHash.insert(make_struct(32, std::string("San Diego")));
 	quadHash.insert(make_struct(49, std::string("Anaheim")));
 
-	quadHash.printAll(cout);
+	//quadHash.printAll(cout);
 
 	//DELETE KEY 58
 	quadHash.remove(58);
 
-	quadHash.printAll(cout);
+	//quadHash.printAll(cout);
 
 	quadHash.insert(make_struct(31, std::string("Los Angeles")));
 	quadHash.insert(make_struct(17, std::string("Orange")));
 	quadHash.insert(make_struct(72, std::string("Palms Springs")));
 	quadHash.insert(make_struct(41, std::string("Riverside")));
 
-	quadHash.printAll(cout);
+	//quadHash.printAll(cout);
 
 	//DELETE KEY 49
 	quadHash.remove(49);
 
-	quadHash.printAll(cout);
+	//quadHash.printAll(cout);
 
 	quadHash.insert(make_struct(19, std::string("Brea")));
 	quadHash.insert(make_struct(60, std::string("Santa Ana")));
@@ -142,12 +138,12 @@ int main()
 	quadHash.insert(make_struct(22, std::string("Aliso Viejo")));
 	quadHash.insert(make_struct(49, std::string("Laguna Beach")));
 
-	quadHash.printAll(cout);
+	//quadHash.printAll(cout);
 
 	//DELETE KEY 41
 	quadHash.remove(41);
 
-	quadHash.printAll(cout);
+	//quadHash.printAll(cout);
 
 	quadHash.insert(make_struct(42, std::string("Vista")));
 	quadHash.insert(make_struct(49, std::string("San Diego")));

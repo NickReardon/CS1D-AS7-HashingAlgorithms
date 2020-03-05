@@ -190,24 +190,26 @@ public:
 
 		if (success)
 		{
+			if (map[hashKey].label == FULL)
+			{
+				std::cout << "Updating: " << '(' << map[hashKey].key << ", " << map[hashKey].value << ')' << " to "
+					<< '(' << toInsert.key << ", " << toInsert.value << ')'
+					<< '\n' << "Hashed Key: " << output << '\n' << '\n';
+			}
+			else
+			{
+				std::cout << "Inserting: " << '(' << toInsert.key << ", " << toInsert.value << ')'
+					<< '\n' << "Hashed Key: " << output << '\n' << '\n';
+			}
+
 			map[hashKey] = toInsert;
 			map[hashKey].label = FULL;
 
 			currentSize++;
-
-			std::cout << "Inserting: " << '(' << toInsert.key << ", " << toInsert.value << ')'
-				<< '\n' << "Hashed Key: " << output << '\n' << '\n';
 		}
 	}
 
-	/**
-	 * @fn	void DoubleHashMap::remove(const T_key key)
-	 * @brief	Removes the given key
-	 *
-	 * @exception	errorType::FULL,	Thrown when a full, error condition occurs.
-	 *
-	 * @param 	key	The key to remove.
-	 */
+
 	void remove(const T_key key)
 	{
 		if (empty())
@@ -247,14 +249,15 @@ public:
 
 		if (success)
 		{
+
+			std::cout << "Removing key: " << key << "  (" << map[hashKey].key << ", " << map[hashKey].value << ')' << '\n'
+				<< "Hashed Key: " << output << '\n' << '\n';
+
 			map[hashKey].key = -1;
 			map[hashKey].value = "";
 			map[hashKey].label = AVAILABLE;
 
 			currentSize--;
-
-			std::cout << "Removing key: " << key << '\n'
-				<< "Hashed Key: " << output << '\n' << '\n';
 
 
 		}
@@ -434,15 +437,25 @@ public:
 
 		if (success)
 		{
+			if (map[hashKey].label == FULL)
+			{
+				std::cout << "Updating: " << '(' << map[hashKey].key << ", " << map[hashKey].value << ')' << " to "
+					<< '(' << toInsert.key << ", " << toInsert.value << ')'
+					<< '\n' << "Hashed Key: " << output << '\n' << '\n';
+			}
+			else
+			{
+				std::cout << "Inserting: " << '(' << toInsert.key << ", " << toInsert.value << ')'
+					<< '\n' << "Hashed Key: " << output << '\n' << '\n';
+			}
+
 			map[hashKey] = toInsert;
 			map[hashKey].label = FULL;
 
 			currentSize++;
-
-			std::cout << "Inserting: " << '(' << toInsert.key << ", " << toInsert.value <<  ')'
-				<< '\n' << "Hashed Key: "<< output << '\n' << '\n';
 		}
 	}
+
 
 	void remove(const T_key key)
 	{
@@ -471,7 +484,7 @@ public:
 				else
 				{
 					collisionCount++;
-					
+
 				}
 			}
 			else
@@ -483,14 +496,15 @@ public:
 
 		if (success)
 		{
+
+			std::cout << "Removing key: " << key << "  (" << map[hashKey].key << ", " << map[hashKey].value << ')' << '\n'
+				<< "Hashed Key: " << output << '\n' << '\n';
+
 			map[hashKey].key = -1;
 			map[hashKey].value = "";
 			map[hashKey].label = AVAILABLE;
 
 			currentSize--;
-
-			std::cout << "Removing key: " << key << '\n'
-				<< "Hashed Key: " << output << '\n' << '\n';
 
 
 		}

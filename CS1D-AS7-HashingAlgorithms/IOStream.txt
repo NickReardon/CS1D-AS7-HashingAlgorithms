@@ -85,74 +85,8 @@ Hashed Key: 22->22
 Inserting: (44, Irvine)
 Hashed Key: 44->15
 
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | EMPTY |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | EMPTY |   -1 |
- [    3] | EMPTY |   -1 |
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Mission Viejo
- [   13] | EMPTY |   -1 |
- [   14] | EMPTY |   -1 |
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | EMPTY |   -1 |
- [   18] | FULL  |   18 | San Clamente
- [   19] | EMPTY |   -1 |
- [   20] | EMPTY |   -1 |
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
-
-Removing key: 18
+Removing key: 18  (18, San Clamente)
 Hashed Key: 18->18
-
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | EMPTY |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | EMPTY |   -1 |
- [    3] | EMPTY |   -1 |
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Mission Viejo
- [   13] | EMPTY |   -1 |
- [   14] | EMPTY |   -1 |
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | EMPTY |   -1 |
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | EMPTY |   -1 |
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
 
 Inserting: (58, Lake Forest)
 Hashed Key: 58->0
@@ -163,74 +97,8 @@ Hashed Key: 32->3
 Inserting: (49, Anaheim)
 Hashed Key: 49->20
 
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | FULL  |   58 | Lake Forest
- [    1] | EMPTY |   -1 |
- [    2] | EMPTY |   -1 |
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Mission Viejo
- [   13] | EMPTY |   -1 |
- [   14] | EMPTY |   -1 |
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | EMPTY |   -1 |
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | FULL  |   49 | Anaheim
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
-
-Removing key: 58
+Removing key: 58  (58, Lake Forest)
 Hashed Key: 58->0
-
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | EMPTY |   -1 |
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Mission Viejo
- [   13] | EMPTY |   -1 |
- [   14] | EMPTY |   -1 |
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | EMPTY |   -1 |
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | FULL  |   49 | Anaheim
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
 
 Inserting: (31, Los Angeles)
 Hashed Key: 31->2
@@ -241,77 +109,11 @@ Hashed Key: 17->17
 Inserting: (72, Palms Springs)
 Hashed Key: 72->14
 
-Inserting: (41, Riverside)
+Updating: (41, Mission Viejo) to (41, Riverside)
 Hashed Key: 41->12
 
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | FULL  |   31 | Los Angeles
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Riverside
- [   13] | EMPTY |   -1 |
- [   14] | FULL  |   72 | Palms Springs
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | FULL  |   17 | Orange
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | FULL  |   49 | Anaheim
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
-
-Removing key: 49
+Removing key: 49  (49, Anaheim)
 Hashed Key: 49->20
-
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | FULL  |   31 | Los Angeles
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Riverside
- [   13] | EMPTY |   -1 |
- [   14] | FULL  |   72 | Palms Springs
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | FULL  |   17 | Orange
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | AVAIL |   -1 |
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
 
 Inserting: (19, Brea)
 Hashed Key: 19->19
@@ -331,85 +133,19 @@ Hashed Key: 11->11
 Inserting: (18, Del Mar)
 Hashed Key: 18->18
 
-Inserting: (22, Aliso Viejo)
+Updating: (22, Laguna Niguel) to (22, Aliso Viejo)
 Hashed Key: 22->22
 
 Inserting: (49, Laguna Beach)
 Hashed Key: 49->20
 
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | FULL  |   31 | Los Angeles
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | FULL  |   35 | Tustin
- [    7] | FULL  |   60 | Santa Ana
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | FULL  |   11 | La Jolla
- [   12] | FULL  |   41 | Riverside
- [   13] | EMPTY |   -1 |
- [   14] | FULL  |   72 | Palms Springs
- [   15] | FULL  |   44 | Irvine
- [   16] | FULL  |  103 | Oceanside
- [   17] | FULL  |   17 | Orange
- [   18] | FULL  |   18 | Del Mar
- [   19] | FULL  |   19 | Brea
- [   20] | FULL  |   49 | Laguna Beach
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Aliso Viejo
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
-
-Removing key: 41
+Removing key: 41  (41, Riverside)
 Hashed Key: 41->12
-
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | FULL  |   31 | Los Angeles
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | FULL  |   35 | Tustin
- [    7] | FULL  |   60 | Santa Ana
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | FULL  |   11 | La Jolla
- [   12] | AVAIL |   -1 |
- [   13] | EMPTY |   -1 |
- [   14] | FULL  |   72 | Palms Springs
- [   15] | FULL  |   44 | Irvine
- [   16] | FULL  |  103 | Oceanside
- [   17] | FULL  |   17 | Orange
- [   18] | FULL  |   18 | Del Mar
- [   19] | FULL  |   19 | Brea
- [   20] | FULL  |   49 | Laguna Beach
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Aliso Viejo
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
 
 Inserting: (42, Vista)
 Hashed Key: 42->13
 
-Inserting: (49, San Diego)
+Updating: (49, Laguna Beach) to (49, San Diego)
 Hashed Key: 49->20
 
 Inserting: (99, San Juan)
@@ -481,74 +217,8 @@ Hashed Key: 22->22
 Inserting: (44, Irvine)
 Hashed Key: 44->15
 
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | EMPTY |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | EMPTY |   -1 |
- [    3] | EMPTY |   -1 |
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Mission Viejo
- [   13] | EMPTY |   -1 |
- [   14] | EMPTY |   -1 |
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | EMPTY |   -1 |
- [   18] | FULL  |   18 | San Clamente
- [   19] | EMPTY |   -1 |
- [   20] | EMPTY |   -1 |
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
-
-Removing key: 18
+Removing key: 18  (18, San Clamente)
 Hashed Key: 18->18
-
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | EMPTY |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | EMPTY |   -1 |
- [    3] | EMPTY |   -1 |
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Mission Viejo
- [   13] | EMPTY |   -1 |
- [   14] | EMPTY |   -1 |
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | EMPTY |   -1 |
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | EMPTY |   -1 |
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
 
 Inserting: (58, Lake Forest)
 Hashed Key: 58->0
@@ -559,74 +229,8 @@ Hashed Key: 32->3
 Inserting: (49, Anaheim)
 Hashed Key: 49->20
 
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | FULL  |   58 | Lake Forest
- [    1] | EMPTY |   -1 |
- [    2] | EMPTY |   -1 |
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Mission Viejo
- [   13] | EMPTY |   -1 |
- [   14] | EMPTY |   -1 |
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | EMPTY |   -1 |
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | FULL  |   49 | Anaheim
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
-
-Removing key: 58
+Removing key: 58  (58, Lake Forest)
 Hashed Key: 58->0
-
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | EMPTY |   -1 |
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Mission Viejo
- [   13] | EMPTY |   -1 |
- [   14] | EMPTY |   -1 |
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | EMPTY |   -1 |
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | FULL  |   49 | Anaheim
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
 
 Inserting: (31, Los Angeles)
 Hashed Key: 31->2
@@ -637,77 +241,11 @@ Hashed Key: 17->17
 Inserting: (72, Palms Springs)
 Hashed Key: 72->14
 
-Inserting: (41, Riverside)
+Updating: (41, Mission Viejo) to (41, Riverside)
 Hashed Key: 41->12
 
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | FULL  |   31 | Los Angeles
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Riverside
- [   13] | EMPTY |   -1 |
- [   14] | FULL  |   72 | Palms Springs
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | FULL  |   17 | Orange
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | FULL  |   49 | Anaheim
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
-
-Removing key: 49
+Removing key: 49  (49, Anaheim)
 Hashed Key: 49->20
-
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | FULL  |   31 | Los Angeles
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | EMPTY |   -1 |
- [    7] | EMPTY |   -1 |
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | EMPTY |   -1 |
- [   12] | FULL  |   41 | Riverside
- [   13] | EMPTY |   -1 |
- [   14] | FULL  |   72 | Palms Springs
- [   15] | FULL  |   44 | Irvine
- [   16] | EMPTY |   -1 |
- [   17] | FULL  |   17 | Orange
- [   18] | AVAIL |   -1 |
- [   19] | EMPTY |   -1 |
- [   20] | AVAIL |   -1 |
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Laguna Niguel
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
 
 Inserting: (19, Brea)
 Hashed Key: 19->19
@@ -727,85 +265,19 @@ Hashed Key: 11->11
 Inserting: (18, Del Mar)
 Hashed Key: 18->18
 
-Inserting: (22, Aliso Viejo)
+Updating: (22, Laguna Niguel) to (22, Aliso Viejo)
 Hashed Key: 22->22
 
 Inserting: (49, Laguna Beach)
 Hashed Key: 49->20
 
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | FULL  |   31 | Los Angeles
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | FULL  |   60 | Santa Ana
- [    7] | FULL  |   35 | Tustin
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | FULL  |   11 | La Jolla
- [   12] | FULL  |   41 | Riverside
- [   13] | EMPTY |   -1 |
- [   14] | FULL  |   72 | Palms Springs
- [   15] | FULL  |   44 | Irvine
- [   16] | FULL  |  103 | Oceanside
- [   17] | FULL  |   17 | Orange
- [   18] | FULL  |   18 | Del Mar
- [   19] | FULL  |   19 | Brea
- [   20] | FULL  |   49 | Laguna Beach
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Aliso Viejo
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
-
-Removing key: 41
+Removing key: 41  (41, Riverside)
 Hashed Key: 41->12
-
-  Index  | LABEL |  Key  |  Value
-_________|_______|_______|___________________
- [    0] | AVAIL |   -1 |
- [    1] | EMPTY |   -1 |
- [    2] | FULL  |   31 | Los Angeles
- [    3] | FULL  |   32 | San Diego
- [    4] | EMPTY |   -1 |
- [    5] | EMPTY |   -1 |
- [    6] | FULL  |   60 | Santa Ana
- [    7] | FULL  |   35 | Tustin
- [    8] | EMPTY |   -1 |
- [    9] | EMPTY |   -1 |
- [   10] | EMPTY |   -1 |
- [   11] | FULL  |   11 | La Jolla
- [   12] | AVAIL |   -1 |
- [   13] | EMPTY |   -1 |
- [   14] | FULL  |   72 | Palms Springs
- [   15] | FULL  |   44 | Irvine
- [   16] | FULL  |  103 | Oceanside
- [   17] | FULL  |   17 | Orange
- [   18] | FULL  |   18 | Del Mar
- [   19] | FULL  |   19 | Brea
- [   20] | FULL  |   49 | Laguna Beach
- [   21] | EMPTY |   -1 |
- [   22] | FULL  |   22 | Aliso Viejo
- [   23] | EMPTY |   -1 |
- [   24] | EMPTY |   -1 |
- [   25] | EMPTY |   -1 |
- [   26] | EMPTY |   -1 |
- [   27] | EMPTY |   -1 |
- [   28] | EMPTY |   -1 |
-
 
 Inserting: (42, Vista)
 Hashed Key: 42->13
 
-Inserting: (49, San Diego)
+Updating: (49, Laguna Beach) to (49, San Diego)
 Hashed Key: 49->20
 
 Inserting: (99, San Juan)
