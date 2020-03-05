@@ -15,7 +15,7 @@
 #include "PrintHeader.h"
 
 //Program Specific
-#include "DoubleHash.h"
+#include "ArrayHashMap.h"
 
 
 #endif // _HEADER_H_

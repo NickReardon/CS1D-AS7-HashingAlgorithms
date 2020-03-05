@@ -5,8 +5,8 @@
  * SECTION			: MW - 2:30p
  * DUE DATE			: 03 / 04 / 20
  *****************************************************************************/
-#ifndef _DOUBLEHASH_H_
-#define _DOUBLEHASH_H_
+#ifndef _ARRAYHASHMAP_H_
+#define _ARRAYHASHMAP_H_
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -573,7 +573,7 @@ public:
 
 
 
-#endif //!_DOUBLEHASH_H_
+#endif //!_ARRAYHASHMAP_H_
 
 
 

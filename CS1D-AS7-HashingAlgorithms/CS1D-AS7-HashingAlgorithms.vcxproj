@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DoubleHash.h" />
+    <ClInclude Include="ArrayHashMap.h" />
     <ClInclude Include="Except.h">
       <SubType>
       </SubType>
